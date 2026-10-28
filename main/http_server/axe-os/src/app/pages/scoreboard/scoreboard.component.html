@@ -1,0 +1,37 @@
+<nb-card>
+    <nb-card-header>{{ 'SCOREBOARD.TITLE' | translate }}</nb-card-header>
+    <nb-card-body>
+        <p class="hint">{{ 'SCOREBOARD.HINT' | translate }}</p>
+
+        <p *ngIf="loadError" class="error">{{ 'SCOREBOARD.LOAD_ERROR' | translate }}</p>
+
+        <h4 *ngIf="entries === null && !loadError">{{ 'COMMON.LOADING' | translate }}</h4>
+
+        <p *ngIf="entries !== null && entries.length === 0">{{ 'SCOREBOARD.EMPTY' | translate }}</p>
+
+        <div class="table-wrap" *ngIf="entries !== null && entries.length > 0">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="rank">#</th>
+                        <th class="num">{{ 'SCOREBOARD.DIFFICULTY' | translate }}</th>
+                        <th>{{ 'SCOREBOARD.FOUND' | translate }}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of entries" [class.top]="e.rank === 1">
+                        <td class="rank">{{ e.rank }}</td>
+                        <td class="num" [title]="e.difficulty | number:'1.0-0'">{{ e.difficulty | humanReadable }}</td>
+                        <td>
+                            <ng-container *ngIf="e.timestamp > 0; else unknownTime">
+                                {{ toMs(e.timestamp) | date:'yyyy-MM-dd HH:mm' }}
+                                <span class="ago">({{ nowSec - e.timestamp | dateAgo }})</span>
+                            </ng-container>
+                            <ng-template #unknownTime>{{ 'SCOREBOARD.UNKNOWN_TIME' | translate }}</ng-template>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </nb-card-body>
+</nb-card>

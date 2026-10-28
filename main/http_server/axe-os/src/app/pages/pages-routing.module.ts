@@ -11,6 +11,7 @@ import { SwarmComponent } from './swarm/swarm.component';
 import { AlertComponent } from './alert/alert.component';
 import { SecurityComponent } from './security/security.component';
 import { CanSwarmComponent } from './can-swarm/can-swarm.component';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 
 const routes: Routes = [{
   path: '',
@@ -52,6 +53,10 @@ const routes: Routes = [{
     {
       path: 'can-fleet',
       component: CanSwarmComponent
+    },
+    {
+      path: 'scoreboard',
+      component: ScoreboardComponent
     },
     {
       path: '**',
