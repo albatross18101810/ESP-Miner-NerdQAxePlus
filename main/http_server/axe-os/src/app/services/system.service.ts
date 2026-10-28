@@ -13,6 +13,7 @@ import { ISystemV2 } from '../models/ISystemV2';
 import { environment } from '../../environments/environment';
 import { IInfluxDB } from '../models/IInfluxDB';
 import { IUpdateStatus } from '../models/IUpdateStatus';
+import { IScoreboardV2 } from '../models/IScoreboardV2';
 import { HttpHeaders } from '@angular/common/http';
 
 const defaultInfo: ISystemInfo = {
@@ -236,6 +237,10 @@ export class SystemService {
 
   public getSystemV2(): Observable<ISystemV2> {
     return this.httpClient.get<ISystemV2>(`/api/v2/system`);
+  }
+
+  public getScoreboardV2(uri: string = ''): Observable<IScoreboardV2> {
+    return this.httpClient.get<IScoreboardV2>(`${uri}/api/v2/scoreboard`);
   }
 
   public getInfluxInfo(uri: string = ''): Observable<IInfluxDB> {

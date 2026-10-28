@@ -1,4 +1,6 @@
 #include <string.h>
+#include <time.h>
+#include "scoreboard.h"
 
 #include "esp_log.h"
 
@@ -124,6 +126,11 @@ void ASIC_result_task(void *pvParameters)
         }
 
         STRATUM_MANAGER->checkForBestDiff(job->pool_id, nonce_diff, job->target);
+
+        if (!duplicate) {
+            time_t now = time(NULL);
+            scoreboard_submit(nonce_diff, now > 1700000000 ? (uint32_t) now : 0);
+        }
 
         STRATUM_MANAGER->checkForFoundBlock(job->pool_id, nonce_diff, job->target);
 

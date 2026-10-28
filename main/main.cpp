@@ -1,4 +1,5 @@
 #include <string.h>
+#include "scoreboard.h"
 
 #include "esp_attr.h"
 #include "esp_event.h"
@@ -219,6 +220,7 @@ extern "C" void app_main(void)
 
     ESP_LOGI(TAG, "Welcome to the Nerd*Axe - hack the planet!");
     ESP_ERROR_CHECK(nvs_flash_init());
+    scoreboard_init();
 
     // shows and saves last reset reason
     esp_reset_reason_t reason = SYSTEM_MODULE.showLastResetReason();

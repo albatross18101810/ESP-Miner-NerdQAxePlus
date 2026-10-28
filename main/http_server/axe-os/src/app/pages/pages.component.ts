@@ -50,6 +50,11 @@ import { IIdentifyV2 } from '../models/IIdentifyV2';
                 link: '/pages/swarm',
             },
             {
+                title: this.translateService.instant('NAVIGATION.SCOREBOARD'),
+                icon: 'award-outline',
+                link: '/pages/scoreboard',
+            },
+            {
                 title: this.translateService.instant('NAVIGATION.SETTINGS'),
                 icon: 'settings-2-outline',
                 link: '/pages/settings',

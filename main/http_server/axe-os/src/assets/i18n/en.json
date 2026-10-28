@@ -31,7 +31,8 @@
     "SWARM": "Swarm",
     "INFLUXDB": "InfluxDB",
     "ALERTS": "Alerts",
-    "SECURITY": "Security"
+    "SECURITY": "Security",
+    "SCOREBOARD": "Scoreboard"
   },
   "HOME": {
     "HASH_RATE": "Hash Rate",
@@ -593,5 +594,14 @@
     "COINBASE_MAX_FEE": "Max pool fee",
     "COINBASE_MAX_FEE_HINT": "Verification fails if the pool's share of the coinbase reward exceeds this percentage (e.g. 3 for ckpool's 3% fee).",
     "COINBASE_RECONNECT_HINT": "Saving will briefly disconnect and reconnect to the pool to apply the new settings."
+  },
+  "SCOREBOARD": {
+    "TITLE": "Top 20 Best Shares",
+    "HINT": "The highest-difficulty shares this device has found. Saved to flash every 5 minutes, so it survives restarts.",
+    "DIFFICULTY": "Difficulty",
+    "FOUND": "Found",
+    "UNKNOWN_TIME": "Unknown (clock not synced)",
+    "EMPTY": "No shares recorded yet.",
+    "LOAD_ERROR": "Could not load the scoreboard."
   }
 }

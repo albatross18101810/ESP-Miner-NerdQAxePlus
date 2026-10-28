@@ -15,6 +15,7 @@ import { HomeModule } from './home/home.module';
 import { AlertModule } from './alert/alert.module';
 import { SecurityModule } from './security/security.module';
 import { CanSwarmModule } from './can-swarm/can-swarm.module';
+import { ScoreboardModule } from './scoreboard/scoreboard.module';
 
 //import { PipesModule} from '../pipes/pipes.module';
 
@@ -37,6 +38,7 @@ import { CanSwarmModule } from './can-swarm/can-swarm.module';
     HomeModule,
     SecurityModule,
     CanSwarmModule,
+    ScoreboardModule,
     ],
   declarations: [
     PagesComponent,
